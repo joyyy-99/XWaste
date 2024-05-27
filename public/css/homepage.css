@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+:root{
+    --border : #502419;
+}
+*::-webkit-scrollbar{
+ height: 0.5rem;
+ width: 1rem;
+}
+
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+}
+a{
+    text-decoration: none;
+}
+section{
+    padding: 7rem 2rem;
+}
+button{
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 0.5rem;
+    border-style: hidden;
+}
+button:hover{
+    background-color: grey;
+}
+.header{
+    display: flex;
+    padding: 2rem;
+    border-bottom: 0.1rem solid var(--border);
+    background-color: white;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header .logo{
+    margin-left: 2rem;
+}
+.header .logo a{
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header .nav a{
+    color: black;
+    font-size: 1.7rem;
+    margin: 0 1rem;
+}
+
+.header .nav a:hover{
+    color: gray;
+}
+
+.header .right a{
+    color: black;
+    font-size: 1.5rem;
+    padding-left: 0;
+}
+
+.header .right a:hover{
+    color: gray;
+}
+
+.home{
+    display: flex;
+    flex-direction: row;
+    padding-top: 90px;
+    font-size: 1.7rem;
+}
+.home p, .home h1{
+    padding-bottom: 20px;
+}
+.home .welcome-home,.home .img-home{
+    flex: 1;
+    padding: 20px;
+}
+
+.home .welcome-home{
+    align-items: center;
+    align-content: center;
+    text-align: left;
+}
+
+.home img{
+    max-width: 100%;
+    border-radius: 4rem;
+}
+
+.about{
+    padding-top: 25px;
+    margin-top: 0%;
+}
+.about p{
+    font-size: 1.7rem;
+    text-align: center;
+}
+.about h1{
+    text-align: center;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+    
+}
+.about h2{
+    text-align: center;
+    font-size: 1.7rem;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.about-intro{
+    border: solid black 0.1rem;
+    border-radius: 1.5rem;
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.about-content{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin: 10px;
+}
+.about-text, .about-img{
+    flex: 1;
+    margin: 20px;
+}
+.about-img img{
+   width: 100%;
+   border-radius: 1rem;
+}
+.about-text{
+    border: solid black 0.1rem;
+    border-radius: 1.5rem;
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.services{
+    padding-top: 25px;
+    padding-bottom: 5px;
+}
+.services h1{
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.services h2{
+    font-size: 1.7rem;
+    padding-bottom: 10px;
+}
+.services p{
+    padding-bottom: 10px;
+}
+.services-part1, .services-part2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Add this to distribute items evenly */
+    font-size: 1.7rem;
+    padding-bottom: 15px;
+  }
+  
+  .service1, .service2, .service3, .service4 {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 20px; 
+    border: solid black 0.1rem;
+    margin: 10px;
+    border-radius: 1rem;
+  }
+
+.collection-area{
+    padding-top: 0%;
+    padding-bottom: 0%;
+    align-items: center;
+    margin-top: 30px;
+}
+.collection-area h1{
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.collection-area p{
+    font-size: 1.7rem;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.collection-area .map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.collection-area .map iframe{
+    max-width: 100%;
+    border: none;
+}
+
+.recycling{
+    padding-top: 20px;
+}
+.recycling h1{
+    font-size: 2.5rem;
+    text-align: center;
+}
+.recycling-box{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px;
+}
+.recycling-importance, .img-recycling{
+    flex: 1;
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.recycling-importance h2{
+    font-size: 1.7rem;
+    padding-bottom: 15px;
+}
+.recycling-importance p{
+    padding-bottom: 10px;
+    font-size: 1.7rem;
+}
+.img-recycling img{
+    max-width: 100%;
+    border-radius: 4rem;
+    height: auto;
+}
+.recyclables{
+    padding-top: 20px;
+}
+.recyclables-intro h2{
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.recyclables-intro p{
+    font-size: 1.7rem;
+    text-align: center;
+}
+.recyclables-list{
+    font-size: 1.7rem;
+}
+.recyclables-list{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+.recyclable1,.recyclable2,.recyclable3,.recyclable4{
+    box-sizing: border-box;
+    flex: 1;
+    border: solid grey 0.1rem;
+    padding: 10px;
+    padding-top: 80px;
+    margin: 10px;
+    border-radius: 2rem;
+}
+.recyclable1, .recyclable2, .recyclable3, .recyclable4{
+    p,h4{
+        opacity: 0;
+        transition: opacity 1.5s ease;
+    }
+}
+.recyclable1:hover, .recyclable2:hover, .recyclable3:hover, .recyclable4:hover{
+    p,h4{
+        opacity: 1;
+    }
+    background-image: none;
+}
+.recyclable1{
+    background-image: url(/Images/recyclable1.png);
+    background-size: cover;
+}
+
+.recyclable2{
+    background-image: url(/Images/recyclable2.png);
+    background-size: cover;
+}
+.recyclable3{
+    background-image: url(/Images/recyclable3.png);
+    background-size: cover;
+}
+.recyclable4{
+    background-image: url(/Images/recyclable4.png);
+    background-size: cover;
+}
+.testimonials{
+    padding-top: 20px;
+}
+.testimonials h1{
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.ppl-testimonials{
+    display: flex;
+    flex-direction: row;
+}
+
+.testimonial1,.testimonial2,.testimonial3{
+    flex: 1;
+    box-sizing: border-box;
+    border: solid grey 0.1rem;
+    border-radius: 2rem;
+    margin: 10px;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.testimonials span{
+    font-style: italic;
+    font-weight: bold;
+}
+.testimonials img{
+    border: none;
+    border-radius: 50%;
+    max-width: 120px;
+    height: 100px;
+}
+
+.contact{
+    margin-top: 0%;
+    padding-top: 0%;
+}
+.contact h1{
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.contact p{
+    text-align: center;
+    font-size: 1.7rem;
+}
+footer{
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-top: 0.2rem solid black;
+}
+@media (max-width: 768px) {
+    .home{
+        flex-direction: column;
+    }
+    .services-part1, .services-part2 {
+        flex-direction: column;
+    }
+    .recycling-box{
+        flex-direction: column;
+    }
+    .recyclables-list{
+        flex-direction: column;
+    }
+    .ppl-testimonials{
+        flex-direction: column;
+    }
+}
