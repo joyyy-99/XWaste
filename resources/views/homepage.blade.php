@@ -23,7 +23,7 @@
             <a href="#contact">Contact</a>
         </nav>
         <div class="right">
-            <a href="#"><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i>  Sign in</a>
+            <a href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i>  Sign in</a>
         </div>
     </header>
     <section class="home" id="home">
@@ -32,7 +32,7 @@
             <p>Start managing your household waste efficiently with our platform.
                 Schedule pickups, learn about recycling, and give feedback easily.
                 Let's make our city cleaner and greener together.</p>
-            <a href="#"><button>Sign up</button></a>
+            <a href="{{ route('register') }}"><button>Sign up</button></a>
             </div>
             <div class="img-home">
             <img src="Images/home.jpg">

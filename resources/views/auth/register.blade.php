@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+        <img src="{{ asset('favicon_io/apple-touch-icon.png') }}" alt="Logo" style="height: 60px;">
         </x-slot>
 
         <x-validation-errors class="mb-4" />

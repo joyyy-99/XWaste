@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+    <img src="{{ asset('favicon_io/apple-touch-icon.png') }}" alt="Logo" style="height: 60px;">
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -40,11 +40,12 @@
                 @endif
 
                 <x-button class="ms-4">
-                    {{ __('Log in') }}
+                    {{ __('Sign in') }}
                 </x-button>
             </div>
-            <div>
-                <a style="background-color: skyblue"; href="{{url('auth/google')}}">Login using Google</a>
+            <div class ="mt-4">
+                <!--<a style="background-color: skyblue"; href="{{url('auth/google')}}">Login using Google</a>-->
+                <a style="background-color: black; color: white; padding: 10px; border-radius: 5px;" href="{{ url('auth/google') }}">Sign in with Google</a>
             </div>
         </form>
     </x-authentication-card>
