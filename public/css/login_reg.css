@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+.button{
+    background-color: #292929;
+    color: white;
+    padding: 7px;
+    border-radius: 0.5rem;
+    border-style: hidden;
+}
+.button:hover{
+    background-color: grey;
+}
+
+.google-signin-wrapper {
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center; /* Center the child div */
+}
+.google-signin {
+    width: 100%;
+    max-width: 400px; /* Optional: limit the max width of the button */
+    display: flex;
+    justify-content: center;
+    border: 1px solid black; /* Border spans full width */
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.google-signin i{
+    margin-right: 10px;
+}
+
+.google-signin:hover{
+    border-color: gray;
+}
+
+.or-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0; /* Adjust the margin as needed */
+}
+
+.or-line {
+    flex: 1;
+    height: 1px;
+    background-color: gray; /* Adjust the color as needed */
+}
+
+.or-text {
+    padding: 0 10px; /* Adjust the padding as needed */
+    color: black; /* Adjust the text color as needed */
+}
