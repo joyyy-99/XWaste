@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('homepage');
@@ -20,3 +22,7 @@ Route::middleware([
 route::get('auth/google',[GoogleController::class,'googlepage']);
 
 route::get('auth/google/callback',[GoogleController::class,'googlecallback']);
+
+route::get('/home',[HomeController::class,'index']);
+
+route::resource('admin',AdminController::class);
