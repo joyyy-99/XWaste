@@ -34,7 +34,7 @@
             <img src="/Images/household.jpg" alt="Register Household">
             <h2>Register Your Household</h2>
             <p>Register your household to start receiving waste management services.</p>
-            <button onclick="window.location.href='/register-household'">Register Now</button>
+            <a href="{{ route('household.create') }}"><button>Register Now</button></a>
         </div>
         <div class="card">
             <img src="/Images/garbage_bins.jpg" alt="Get Garbage Bins">
@@ -52,7 +52,7 @@
             <img src="/Images/schedule.jpg" alt="Scheduling">
             <h2>Scheduling</h2>
             <p>Schedule your waste pickups.</p>
-            <button onclick="window.location.href='/scheduling'">Schedule Now</button>
+            <a href="{{ route('schedule.create') }}"><button>Schedule Now</button></a>
         </div>
         <div class="card">
             <img src="/Images/payment.jpg" alt="Payment">
@@ -64,7 +64,7 @@
             <img src="/Images/feedback.jpg" alt="Feedback">
             <h2>Feedback</h2>
             <p>We value your feedback. Please let us know how we can improve our services.</p>
-            <button onclick="window.location.href='/feedback'">Give Feedback</button>
+            <a href="{{ route('feedback.create') }}"><button>Give Feedback</button></a>
         </div>
     </div>
     <footer>
