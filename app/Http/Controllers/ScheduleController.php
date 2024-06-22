@@ -1,15 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Models\Schedule;
 use Illuminate\Http\Request;
-use App\Models\Schedule; // Make sure to import your Schedule model
 
 class ScheduleController extends Controller
 {
     public function index()
     {
-        // Retrieve schedules from the database
         $schedules = Schedule::all();
         return view('schedule.index', compact('schedules'));
     }
@@ -19,24 +17,22 @@ class ScheduleController extends Controller
         return view('schedule.create');
     }
 
-
     public function store(Request $request)
     {
-        // Validate the incoming request data
         $request->validate([
-            'pickup_date' => 'required|date', // Example validation rule for pickup date
-            // Add more validation rules as needed
+            'pickup_date' => 'required|date',
         ]);
 
-        // Create a new Schedule instance
-        $schedule = new Schedule();
-        $schedule->pickup_date = $request->pickup_date;
-        // Add other fields as needed
+        // Fetch the household ID for the logged-in user
+        $householdId = auth()->user()->household->id;
 
-        // Save the schedule to the database
-        $schedule->save();
+        // Create a new schedule
+        Schedule::create([
+            'household_id' => $householdId,
+            'pickup_date' => $request->pickup_date,
+        ]);
 
-        // Optionally, you can return a success message or redirect to a different page
-        return redirect()->route('schedule.create')->with('success', 'Pickup scheduled successfully!');
+        return redirect()->back()->with('success', 'Schedule created successfully!');
     }
+
 }

@@ -12,23 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo"><a href="#">XWaste</a></div>
-        <nav class="nav">
-            <a href="#">Scheduling</a>
-            <a href="#">Subscribe</a>
-            <a href="#">Payment</a>
-            <a href="#">Feedback</a>
-        </nav>
-        <div class="right">
-            <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="logout-button">
-            <i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Logout
-            </button>
-            </form>
-        </div>
-    </header>
+  @include ('resident_header')
     <div class="container">
         <div class="card">
             <img src="/Images/household.jpg" alt="Register Household">
@@ -40,7 +24,7 @@
             <img src="/Images/garbage_bins.jpg" alt="Get Garbage Bins">
             <h2>Get Garbage Bins</h2>
             <p>Request garbage bins for your household.</p>
-            <button onclick="window.location.href='/get-garbage-bins'">Request Bins</button>
+            <a href="{{ route('garbage_bin_requests.create') }}"><button>Request Bins</button></a>
         </div>
         <div class="card">
             <img src="/Images/subscribe.jpg" alt="Start a Subscription">

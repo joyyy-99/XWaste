@@ -16,23 +16,7 @@
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 </head>
 <body>
-<header class="header">
-        <div class="logo"><a href="{{ route('dashboard') }}">XWaste</a></div>
-        <nav class="nav">
-            <a href="#">Scheduling</a>
-            <a href="#">Subscribe</a>
-            <a href="#">Payment</a>
-            <a href="#">Feedback</a>
-        </nav>
-        <div class="right">
-            <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="logout-button">
-            <i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Logout
-            </button>
-            </form>
-        </div>
-    </header>
+@include ('resident_header')
     <div class="household-container">
     <h1>Register Household</h1>
     @if(session('success'))

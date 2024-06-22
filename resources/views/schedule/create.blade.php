@@ -13,28 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.3/flatpickr.min.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo"><a href="#">XWaste</a></div>
-        <nav class="nav">
-            <a href="#">Scheduling</a>
-            <a href="#">Subscribe</a>
-            <a href="#">Payment</a>
-            <a href="#">Feedback</a>
-        </nav>
-        <div class="right">
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="logout-button">
-                    <i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Logout
-                </button>
-            </form>
-        </div>
-    </header>
+@include ('resident_header')
     
     <div class="schedule-container">
         <h1>Schedule Pickup</h1>
         @if(session('success'))
-            <div>{{ session('success') }}</div>
+            <div class="success">{{ session('success') }}</div>
         @endif
 
         <form action="{{ route('schedule.store') }}" method="POST" class="schedule-form">
@@ -60,6 +44,13 @@
         flatpickr('#pickup_date', {
             enableTime: false, // Disable time selection
             dateFormat: 'Y-m-d', // Set date format to 'YYYY-MM-DD'
+            minDate: 'tomorrow',
+            disable: [
+                function(date) {
+                    // Disable dates before today
+                    return date < new Date(new Date().setHours(0,0,0,0));
+                }
+            ]
         });
     </script>
 </body>

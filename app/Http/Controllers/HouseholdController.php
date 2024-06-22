@@ -19,12 +19,12 @@ class HouseholdController extends Controller
             'subscription_status' => 'boolean',
         ]);
 
-        $household = Household::create([
+        Household::create([
             'user_id' => auth()->id(), // Assuming user is logged in
             'location' => $request->location,
             'subscription_status' => $request->has('subscription_status'),
         ]);
 
-        return redirect()->route('dashboard')->with('success', 'Household registered successfully.');
+        return redirect()->back()->with('success', 'Household registered successfully.');
     }
 }
