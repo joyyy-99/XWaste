@@ -30,7 +30,7 @@
             <img src="/Images/subscribe.jpg" alt="Start a Subscription">
             <h2>Start a Subscription</h2>
             <p>Choose a subscription plan that suits your needs.</p>
-            <button onclick="window.location.href='/start-subscription'">Subscribe Now</button>
+            <a href="{{ route('subscription.create') }}"><button>Subscribe Now</button></a>
         </div>
         <div class="card">
             <img src="/Images/schedule.jpg" alt="Scheduling">
@@ -42,7 +42,7 @@
             <img src="/Images/payment.jpg" alt="Payment">
             <h2>Payment</h2>
             <p>Make payments for your subscription and services.</p>
-            <a href="{{ route('payment.create') }}" class="btn btn-primary">Make Another Payment</a>
+            <a href="{{ route('payment.create') }}"><button>Make Another Payment</button></a>
             </div>
         </div>
         <div class="card">
