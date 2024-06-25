@@ -8,6 +8,7 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HouseholdController;
 use App\Http\Controllers\GarbageBinRequestController;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/', function () {
     return view('homepage');
@@ -54,4 +55,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/garbage_bin_requests', [GarbageBinRequestController::class, 'index'])->name('garbage_bin_requests.index');
     Route::get('/garbage_bin_requests/create', [GarbageBinRequestController::class, 'create'])->name('garbage_bin_requests.create');
     Route::post('/garbage_bin_requests', [GarbageBinRequestController::class, 'store'])->name('garbage_bin_requests.store');
+
+
+//Payment routes
+Route::get('/payment/create', [PaymentController::class, 'create'])->name('payment.create');
+Route::post('/payment', [PaymentController::class, 'store'])->name('payment.store');
+Route::get('/payment/confirmation', [PaymentController::class, 'confirmation'])->name('payment.confirmation');
 });

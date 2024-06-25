@@ -42,7 +42,8 @@
             <img src="/Images/payment.jpg" alt="Payment">
             <h2>Payment</h2>
             <p>Make payments for your subscription and services.</p>
-            <button onclick="window.location.href='/payment'">Make a Payment</button>
+            <a href="{{ route('payment.create') }}" class="btn btn-primary">Make Another Payment</a>
+            </div>
         </div>
         <div class="card">
             <img src="/Images/feedback.jpg" alt="Feedback">

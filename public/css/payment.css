@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+:root{
+    --border : #502419;
+}
+*::-webkit-scrollbar{
+ height: 0.5rem;
+ width: 1rem;
+}
+
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+}
+a{
+    text-decoration: none;
+}
+section{
+    padding: 7rem 2rem;
+}
+button{
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 0.5rem;
+    border-style: hidden;
+    width: 100%;
+}
+button:hover{
+    background-color: grey;
+}
+.header{
+    cursor: pointer;
+    display: flex;
+    padding: 2rem;
+    border-bottom: 0.1rem solid var(--border);
+    background-color: white;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header .logo{
+    margin-left: 2rem;
+}
+.header .logo a{
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header .nav a{
+    color: black;
+    font-size: 1.7rem;
+    margin: 0 1rem;
+}
+
+.header .nav a:hover{
+    color: gray;
+}
+
+.header .right{
+    display: inline;
+}
+.header .right{
+    color: black;
+    font-size: 1.5rem;
+    padding-left: 0;
+}
+
+.header .right .logout-button{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.header .right .logout-button:hover{
+    color: gray;
+}
+
+body {
+    background-color: white; 
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.payment-container{
+    padding-top: 120px;
+}
+.payment-form {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    font-size: 1.3rem;
+}
+
+input[type="number"],
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+
+.success {
+    max-width: 600px;
+    margin: 20px auto 0;
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+}
+footer{
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-top: 0.05rem solid black;
+}
+.confirmation-container {
+    padding-top: 120px;
+    text-align: center;
+}
+
+.alert {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: grey;
+}
