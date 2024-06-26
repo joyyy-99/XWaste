@@ -41,6 +41,7 @@
 
         .sidebar-menu a:hover {
             background-color: grey;
+            color: black;
         }
 
         .form-area {
