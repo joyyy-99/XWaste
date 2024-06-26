@@ -13,6 +13,7 @@ use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\TruckController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\TrackingController;
 
 Route::get('/', function () {
     return view('homepage');
@@ -90,3 +91,6 @@ Route::delete('/employees/{employeeId}/{truckId}', [EmployeeController::class, '
 
 // Route for User Registration on Admin Page
 Route::get('/users', [AdminController::class, 'index'])->name('admin.index');
+
+//Route for Tracking
+Route::get('/tracking', [TrackingController::class, 'index'])->name('tracking.index');
