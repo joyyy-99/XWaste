@@ -43,7 +43,6 @@
             <h2>Payment</h2>
             <p>Make payments for your subscription and services.</p>
             <a href="{{ route('payment.create') }}"><button>Make Another Payment</button></a>
-            </div>
         </div>
         <div class="card">
             <img src="/Images/feedback.jpg" alt="Feedback">
