@@ -12,6 +12,6 @@ class TrackingController extends Controller
     }
     public function index1()
     {
-        return view('tracking.index1'); 
+        return view('tracking.admin.index1'); 
     }
 }

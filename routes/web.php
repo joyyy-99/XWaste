@@ -96,7 +96,7 @@ Route::get('/users', [AdminController::class, 'index'])->name('admin.index');
 
 //Route for Tracking
 Route::get('/tracking', [TrackingController::class, 'index'])->name('tracking.index');
-Route::get('/tracking', [TrackingController::class, 'index1'])->name('tracking.index1');
+Route::get('/tracking/admin', [TrackingController::class, 'index1'])->name('tracking.admin.index1');
 
 //Admin feedback route
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');

@@ -46,7 +46,7 @@
             <a href="{{ route('assignments.index') }}">Truck Assignments</a>
         </li>
         <li>
-            <a href="{{ route('tracking.index1') }}">Track Garbage Trucks</a>
+            <a href="{{ route('tracking.admin.index1') }}">Track Garbage Trucks</a>
         </li>
     </ul>
 </div>
