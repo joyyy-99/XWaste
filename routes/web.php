@@ -104,3 +104,7 @@ Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.in
 //Card Payment route with Stripe
 Route::get('/stripe/{cost}', [StripePaymentController::class, 'stripe'])->name('stripe');
 Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
+
+//Admin Payment Routes
+Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+

@@ -25,7 +25,7 @@
     <h2>Admin Panel</h2>
     <ul class="sidebar-menu">
         <li>
-            <a href="">View Payments</a>
+            <a href="{{ route('payment.index') }}">View Payments</a>
         </li>
         <li>
             <a href="{{ route('schedule.index') }}">Scheduled Pickups</a>

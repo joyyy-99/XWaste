@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Payment;
+use Illuminate\Support\Facades\Log;
 
 class PaymentController extends Controller
 {
@@ -39,5 +40,13 @@ class PaymentController extends Controller
     public function confirmation()
     {
         return view('payment.confirmation');
+    }
+    public function index()
+    {
+        
+        $payment = Payment::all();
+        Log::info($payment);
+        
+        return view('payment.index', compact('payment'));
     }
 }
