@@ -12,29 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<header class="header">
-        <div class="logo"><a href="{{ route('dashboard') }}">XWaste</a></div>
-        <nav class="nav">
-            <a href="{{ route('schedule.create') }}">Scheduling</a>
-            <a href="{{ route('household.create') }}">Subscribe</a>
-            <a href="{{ route('payment.create') }}">Payment</a>
-            <a href="{{ route('feedback.create') }}">Feedback</a>
-        </nav>
-        <div class="right">
-            <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="logout-button">
-            <i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Logout
-            </button>
-            </form>
-        </div>
-    </header>
+@include ('resident_header')
     <div class="confirmation-container">
         <h1>Payment Confirmation</h1>
         <div class="alert alert-success">
             Your payment has been initiated successfully. You will receive an SMS confirmation shortly.
         </div>
-        <a href="{{ route('payment.create') }}" class="btn btn-primary">Make Another Payment</a>
+        <a href="{{ route('payment.create') }}" class="btn btn-primary" style="margin-bottom: 100px;">Make Another Payment</a>
     </div>
     <footer>
     <div class="credit"> &copy; copyright @

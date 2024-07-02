@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\Truck;
+use App\Models\EmployeeTruck;
+
 use Illuminate\Http\Request;
 
 class AssignmentController extends Controller
@@ -22,10 +24,11 @@ class AssignmentController extends Controller
         return redirect()->back()->with('success', 'Truck assigned to employee successfully.');
     }
 
-    public function destroy($employeeId, $truckId)
+    public function destroy($id)
     {
-        $employee = Employee::find($employeeId);
-        $employee->trucks()->detach($truckId);
+        $assignment = EmployeeTruck::findOrFail($id); 
+        $assignment->delete();
+
         return redirect()->back()->with('success', 'Truck unassigned from employee successfully.');
     }
 }

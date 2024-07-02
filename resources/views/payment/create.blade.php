@@ -11,25 +11,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script>
+        // JavaScript to set current date in payment date field
+        document.addEventListener('DOMContentLoaded', function() {
+            var currentDate = new Date().toISOString().slice(0, 10); // Get current date in YYYY-MM-DD format
+            document.getElementById('paymentDate').value = currentDate;
+        });
+    </script>
 </head>
 <body>
-<header class="header">
-        <div class="logo"><a href="{{ route('dashboard') }}">XWaste</a></div>
-        <nav class="nav">
-            <a href="#">Scheduling</a>
-            <a href="#">Subscribe</a>
-            <a href="#">Payment</a>
-            <a href="#">Feedback</a>
-        </nav>
-        <div class="right">
-            <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="logout-button">
-            <i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Logout
-            </button>
-            </form>
-        </div>
-        </header>
+@include ('resident_header')
     <div class="payment-container">
     <h1>Make a Payment</h1>
 
@@ -47,10 +39,11 @@
         </div>
         <div>
             <label for="subscription">Subscription Plan:</label><br>
-            <input type="radio" id="monthly" name="subscription" value="100" required>
+            <input type="radio" id="monthly" name="subscription" value="100" {{ $plan === 'monthly' ? 'checked' : '' }} readonly>
             <label for="monthly">100 per month</label><br>
-            <input type="radio" id="yearly" name="subscription" value="1099" required>
+            <input type="radio" id="yearly" name="subscription" value="1099" {{ $plan === 'yearly' ? 'checked' : '' }} readonly>
             <label for="yearly">1099 per year</label>
+            <input type="hidden" name="subscription" value="{{ $cost }}">
         </div>
         <div>
             <label for="paymentDate">Payment Date:</label>

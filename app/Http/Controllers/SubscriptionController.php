@@ -20,12 +20,17 @@ class SubscriptionController extends Controller
             'end_date' => 'required|date|after:start_date',
         ]);
 
-        Subscription::create([
+        $subscription = Subscription::create([
             'plan' => $request->input('plan'),
             'start_date' => $request->input('start_date'),
             'end_date' => $request->input('end_date'),
         ]);
 
-        return redirect()->route('subscription.create')->with('success', 'Subscription created successfully.');
+        $planCost = $request->input('plan') === 'monthly' ? 100 : 1099;
+
+        return redirect()->route('payment.create', [
+            'plan' => $subscription->plan,
+            'cost' => $planCost
+        ])->with('success', 'Subscription created successfully.');
     }
 }

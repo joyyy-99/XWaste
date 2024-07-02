@@ -40,7 +40,7 @@
     </form>
     </div>
 
-        <table class="table-area mt-5">
+        <table class="table mt-5">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -57,14 +57,9 @@
                                     <td scope="col">{{ $employee->first_name }} {{ $employee->last_name }}</td>
                                     <td scope="col">{{ $truck->name }}</td>
                                     <td scope="col">
-                                        <form action="{{ route('assignments.destroy', ['employeeId' => $employee->id, 'truckId' => $truck->id]) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-info btn-sm">Delete</button>
-                                        </form>
                                     </td>
                                 </tr>
-                                @endforeach
+                            @endforeach
                         @endforeach
                     </tbody>
         </table>

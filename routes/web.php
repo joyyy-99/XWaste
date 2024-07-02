@@ -74,6 +74,7 @@ Route::post('/subscription', [SubscriptionController::class, 'store'])->name('su
 //Truck-Employee Assignment
 Route::get('/assignments', [AssignmentController::class, 'index'])->name('assignments.index');
 Route::post('/assignments', [AssignmentController::class, 'store'])->name('assignments.store');
+Route::delete('/assignments/{id}', [AssignmentController::class, 'destroy'])->name('assignments.destroy');
 
 // Routes for Trucks
 Route::get('/trucks', [TruckController::class, 'index'])->name('trucks.index');
@@ -87,7 +88,7 @@ Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.
 Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
 Route::get('/employees/{id}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
 Route::put('/employees/{id}', [EmployeeController::class, 'update'])->name('employees.update');
-Route::delete('/employees/{employeeId}/{truckId}', [EmployeeController::class, 'destroy'])->name('employees.destroy');
+Route::delete('/employees/{id}', [EmployeeController::class, 'destroy'])->name('employees.destroy');
 
 // Route for User Registration on Admin Page
 Route::get('/users', [AdminController::class, 'index'])->name('admin.index');

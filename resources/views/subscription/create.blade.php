@@ -12,23 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<header class="header">
-        <div class="logo"><a href="{{ route('dashboard') }}">XWaste</a></div>
-        <nav class="nav">
-            <a href="{{ route('schedule.create') }}">Scheduling</a>
-            <a href="{{ route('household.create') }}">Subscribe</a>
-            <a href="{{ route('payment.create') }}">Payment</a>
-            <a href="{{ route('feedback.create') }}">Feedback</a>
-        </nav>
-        <div class="right">
-            <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="logout-button">
-            <i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Logout
-            </button>
-            </form>
-        </div>
-    </header>
+@include ('resident_header')
     <div class="container">
         <div class="subscription-container">
             <h1>Create Subscription</h1>
@@ -55,6 +39,8 @@
                 <div class="form-group">
                     <label for="end_date">End Date</label>
                     <input type="date" id="end_date" name="end_date" required>
+
+                    <p style="padding-top: 10px;">(You will be redirected to the Payment page after subscribing)</p>
                 </div>
                 <button type="submit" class="btn btn-primary">Create Subscription</button>
             </form>
@@ -66,5 +52,33 @@
       <span>Terms and Conditions Apply</span>
     </div>
     </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const planSelect = document.getElementById('plan');
+        const startDateInput = document.getElementById('start_date');
+        const endDateInput = document.getElementById('end_date');
+
+        // Set start date to today's date
+        const today = new Date().toISOString().split('T')[0];
+        startDateInput.value = today;
+
+        // Calculate end date based on plan selection
+        planSelect.addEventListener('change', function () {
+            const selectedPlan = planSelect.value;
+            let endDate = new Date(today);
+
+            if (selectedPlan === 'monthly') {
+                endDate.setMonth(endDate.getMonth() + 1);
+            } else if (selectedPlan === 'yearly') {
+                endDate.setFullYear(endDate.getFullYear() + 1);
+            }
+
+            endDateInput.value = endDate.toISOString().split('T')[0];
+        });
+
+        // Trigger change event to set initial end date
+        planSelect.dispatchEvent(new Event('change'));
+    });
+</script>
 </body>
 </html>

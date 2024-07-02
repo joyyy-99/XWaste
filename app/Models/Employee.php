@@ -14,7 +14,7 @@ class Employee extends Model
 
     public function trucks()
     {
-        return $this->belongsToMany(Truck::class);
+        return $this->belongsToMany(Truck::class, 'employee_truck');
     }
 }
 
