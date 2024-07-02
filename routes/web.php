@@ -14,6 +14,7 @@ use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\TruckController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\TrackingController;
+use App\Http\Controllers\StripePaymentController;
 
 Route::get('/', function () {
     return view('homepage');
@@ -95,3 +96,10 @@ Route::get('/users', [AdminController::class, 'index'])->name('admin.index');
 
 //Route for Tracking
 Route::get('/tracking', [TrackingController::class, 'index'])->name('tracking.index');
+
+//Admin feedback route
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
+
+//Card Payment route with Stripe
+Route::get('/stripe/{cost}', [StripePaymentController::class, 'stripe'])->name('stripe');
+Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('stripe.post');

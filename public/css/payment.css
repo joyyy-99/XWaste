@@ -66,6 +66,7 @@ button:hover{
     color: black;
     font-size: 2.5rem;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .header .nav a{
@@ -76,6 +77,7 @@ button:hover{
 
 .header .nav a:hover{
     color: gray;
+    text-decoration: none;
 }
 
 .header .right{
@@ -159,13 +161,17 @@ textarea {
     border: 1px solid #c3e6cb;
     border-radius: 4px;
 }
-footer{
-    background-color: white;
-    padding: 30px;
+footer {
     text-align: center;
-    font-size: 1.5rem;
+    padding: 10px;
+    background: white;
     border-top: 0.05rem solid black;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.5rem;
 }
+
 .confirmation-container {
     padding-top: 120px;
     text-align: center;

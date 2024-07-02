@@ -28,13 +28,13 @@
             <a href="">View Payments</a>
         </li>
         <li>
-            <a href="">Schedule Pickups</a>
+            <a href="{{ route('schedule.index') }}">Scheduled Pickups</a>
         </li>
         <li>
             <a href="{{ route('admin.index') }}">Manage Users</a>
         </li>
         <li>
-            <a href="">Reports</a>
+            <a href="{{ route('feedback.index') }}">Feedback</a>
         </li>
         <li>
             <a href="{{ route('employees.index') }}">Employee Registration</a>

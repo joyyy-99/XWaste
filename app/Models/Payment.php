@@ -9,7 +9,6 @@ class Payment extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'phone_number',
         'amount',
         'paymentDate',
         'method'

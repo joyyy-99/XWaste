@@ -50,16 +50,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($employees as $key => $employee)
-                            @foreach ($employee->trucks as $truck)
-                                <tr>
-                                    <td scope="col">{{ ++$key }}</td>
-                                    <td scope="col">{{ $employee->first_name }} {{ $employee->last_name }}</td>
-                                    <td scope="col">{{ $truck->name }}</td>
-                                    <td scope="col">
-                                    </td>
-                                </tr>
-                            @endforeach
+                    @foreach ($assignments as $key => $assignment)
+                            <tr>
+                                <td scope="col">{{ ++$key }}</td>
+                                <td scope="col">{{ $assignment->employee->first_name }} {{ $assignment->employee->last_name }}</td>
+                                <td scope="col">{{ $assignment->truck->name }}</td>
+                                <td scope="col">
+                                    <form action="{{ route('assignments.destroy', $assignment->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-info btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
         </table>

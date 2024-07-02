@@ -11,7 +11,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <script>
         // JavaScript to set current date in payment date field
         document.addEventListener('DOMContentLoaded', function() {
@@ -34,10 +33,6 @@
     <form action="{{ route('payment.store') }}" method="POST" class="payment-form">
         @csrf
         <div>
-            <label for="phone_number">Phone Number:</label>
-            <input type="number" id="phone_number" name="phone_number" required>
-        </div>
-        <div>
             <label for="subscription">Subscription Plan:</label><br>
             <input type="radio" id="monthly" name="subscription" value="100" {{ $plan === 'monthly' ? 'checked' : '' }} readonly>
             <label for="monthly">100 per month</label><br>
@@ -51,7 +46,11 @@
         </div>
         <div>
             <label for="method">Payment Method:</label>
-            <input type="text" id="method" name="method" required>
+            <select id="method" name="method" required>
+                <option value="" disabled selected>Select a payment method</option>
+                <option value="card">Pay with Card</option>
+                <option value="cash">Pay with Cash</option>
+            </select>
         </div>
         <button type="submit">Pay</button>
     </form>
