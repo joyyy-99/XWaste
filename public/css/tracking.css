@@ -99,19 +99,40 @@ h1 {
 }
 
 .container {
-    flex: 1; /* This makes the container take up remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 20px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     text-align: center;
 }
 
-#map {
-    height: 180px; /* Updated height */
-    width: 180px; /* Updated width */
-    margin: 0 auto; /* Center the map */
-    margin-bottom: 30px;
+.tracking-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
 }
 
-footer{
+.truck-info {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+#map {
+    height: 500px;
+    width: 700px;
+}
+
+footer {
     background-color: white;
     padding: 30px;
     text-align: center;

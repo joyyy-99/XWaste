@@ -10,4 +10,8 @@ class TrackingController extends Controller
     {
         return view('tracking.index'); 
     }
+    public function index1()
+    {
+        return view('tracking.index1'); 
+    }
 }
