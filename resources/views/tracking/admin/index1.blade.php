@@ -58,11 +58,7 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-
-    // Define the waste disposal site location in Nairobi
-    var wasteDisposalSite = L.marker([-1.286389, 36.817223]).addTo(map)
-        .bindPopup('Waste Disposal Site')
-        .openPopup();
+    
 
     // Check if the browser supports geolocation
     if (navigator.geolocation) {
@@ -73,7 +69,7 @@
 
             // Add a marker at the current position
             var userMarker = L.marker([lat, lon]).addTo(map)
-                .bindPopup('You are here')
+                .bindPopup('Waste disposal')
                 .openPopup();
 
             // Set the map view to the current position
@@ -82,7 +78,7 @@
             // Add routing from waste disposal site to user's location
             L.Routing.control({
                 waypoints: [
-                    L.latLng(-1.286389, 36.817223), // Waste disposal site
+                   
                     L.latLng(lat, lon) // User's location
                 ],
                 routeWhileDragging: true,
