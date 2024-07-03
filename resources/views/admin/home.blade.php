@@ -48,6 +48,12 @@
         <li>
             <a href="{{ route('tracking.admin.index1') }}">Track Garbage Trucks</a>
         </li>
+        <li>
+            <a href="{{ route('household.index') }}">View Households</a>
+        </li>
+        <li>
+            <a href="{{ route('garbage_bin_requests.index') }}">Garbage bins Requested</a>
+        </li>
     </ul>
 </div>
 

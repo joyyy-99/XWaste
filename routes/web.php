@@ -108,3 +108,9 @@ Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('str
 //Admin Payment Routes
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
 
+//Admin household route
+Route::get('/household', [HouseholdController::class, 'index'])->name('household.index');
+
+//Admin garbage bin requests route
+Route::get('/garbage_bin_requests', [GarbageBinRequestController::class, 'index'])->name('garbage_bin_requests.index');
+
