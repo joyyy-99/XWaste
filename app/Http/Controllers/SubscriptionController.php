@@ -7,6 +7,11 @@ use App\Models\Subscription;
 
 class SubscriptionController extends Controller
 {
+    public function index(){
+        $subscriptions = Subscription::all();
+        return view('subscription.index', compact('subscriptions'));
+    }
+
     public function create()
     {
         return view('subscription.create');
@@ -21,6 +26,7 @@ class SubscriptionController extends Controller
         ]);
 
         $subscription = Subscription::create([
+            'user_id' => auth()->user()->id,
             'plan' => $request->input('plan'),
             'start_date' => $request->input('start_date'),
             'end_date' => $request->input('end_date'),

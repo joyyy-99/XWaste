@@ -68,6 +68,7 @@ Route::post('/payment', [PaymentController::class, 'store'])->name('payment.stor
 Route::get('/payment/confirmation', [PaymentController::class, 'confirmation'])->name('payment.confirmation');
 
 //Subscription routes
+Route::get('/subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
 Route::get('/subscription/create', [SubscriptionController::class, 'create'])->name('subscription.create');
 Route::post('/subscription', [SubscriptionController::class, 'store'])->name('subscription.store');
 });
@@ -112,5 +113,7 @@ Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index
 Route::get('/household', [HouseholdController::class, 'index'])->name('household.index');
 
 //Admin garbage bin requests route
-Route::get('/garbage_bin_requests/admin', [GarbageBinRequestController::class, 'index1'])->name('garbage_bin_requests.admin.index1');
+Route::get('/garbage_bin_requests/admin', [GarbageBinRequestController::class, 'index'])->name('garbage_bin_requests.admin.index1');
 
+Route::resource('employees', EmployeeController::class);
+Route::resource('trucks', TruckController::class);

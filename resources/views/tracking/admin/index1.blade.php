@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garbage Truck Tracking</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/favicon_io/site.webmanifest">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/tracking.css">
-</head>
-<body>
 @extends('admin.home')
 
 @section('content')
 
 <div class="container">
-    <h1>Track Garbage Trucks</h1>
+<h3 align="center" class="mt-5">Track Garbage Trucks</h3>
+<div class="row">
+<div class="col-md-2">
+    </div>
+    <div class="col-md-10">
+
     <div class="map-container">
         <div id="map"></div>
         <div class="tracking-info">
@@ -43,12 +30,6 @@
         </div>
     </div>
 </div>
-<footer>
-    <div class="credit"> &copy; copyright @
-    <?php echo date('Y'); ?> All Rights Reserved <br> by <span>Joy Awino & Anita Kamau <br> </span>
-    <span>Terms and Conditions Apply</span>
-    </div>
-</footer>
 
 <script>
     // Initialize the map and set its view to Nairobi
@@ -134,5 +115,45 @@
     }
 </script>
 @endsection
-</body>
-</html>
+
+@push('css')
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .form-area {
+            padding: 20px;
+            margin-top: 20px;
+            background-color: white;
+            color: #292929; 
+        }
+
+        .bi-trash-fill {
+            color: red;
+            font-size: 18px;
+        }
+
+        .bi-pencil {
+            color: green;
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        .btn.btn-info {
+            background-color: #292929;
+            color: white;
+            padding: 7px;
+            border-radius: 0.5rem;
+            border-style: hidden;
+        }
+
+        .btn.btn-info:hover {
+            background-color: grey;
+        }
+
+        
+    </style>
+@endpush

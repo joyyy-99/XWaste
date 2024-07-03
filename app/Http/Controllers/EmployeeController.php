@@ -53,7 +53,7 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
         $employee = $this->employee->findOrFail($id);
-        $employee->update($request->all());
+        $employee->update(array_merge($employee->toArray(), $request->toArray()));
 
         return redirect()->route('employees.index')->with('success', 'Employee updated successfully.');
     }

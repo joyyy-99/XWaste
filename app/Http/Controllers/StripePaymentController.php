@@ -13,9 +13,8 @@ class StripePaymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function stripe(Request $request)
-    {
-        $cost = $request->query('cost');
+    public function stripe($cost)
+    {  
         return view('payment.stripe', compact('cost'));
     }
     

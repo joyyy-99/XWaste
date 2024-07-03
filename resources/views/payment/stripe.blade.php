@@ -81,7 +81,7 @@
     
                         <div class="row">
                             <div class="col-xs-12">
-                                <button type="submit" style="color: white;">Pay Now {{$cost}} </button>
+                                <button type="submit" style="color: white;">Pay Now (Ksh {{$cost}}) </button>
                             </div>
                         </div>
                             
@@ -89,15 +89,15 @@
                 </div>
             </div>        
         </div>
-</div>
-
+    </div>
+        
 <footer>
     <div class="credit"> &copy; copyright @
       <?php echo date('Y'); ?> All Rights Reserved <br> by <span>Joy Awino & Anita Kamau <br> </span>
       <span>Terms and Conditions Apply</span>
-    </div>
+</div>
 </footer>
-        
+<script src="{{ asset('js/menu.js') }}"></script>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     
 <script type="text/javascript">

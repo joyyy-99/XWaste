@@ -7,6 +7,7 @@
             <a href="{{ route('feedback.create') }}">Feedback</a>
             <a href="{{ route('tracking.index') }}">Tracking</a>
         </nav>
+        <div class="right-buttons">
         <div class="right">
             <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -15,4 +16,15 @@
             </button>
             </form>
         </div>
-    </header>
+        <button class="menu-button" onclick="toggleDropdownMenu()">
+        <i class="fa-solid fa-caret-down" style="color: #000000;"></i>
+        </button>
+        </div>
+        <div class="dropdown-menu">
+        <a href="{{ route('schedule.create') }}">Scheduling</a>
+        <a href="{{ route('subscription.create') }}">Subscribe</a>
+        <a href="{{ route('payment.create') }}">Payment</a>
+        <a href="{{ route('feedback.create') }}">Feedback</a>
+        <a href="{{ route('tracking.index') }}">Tracking</a>
+    </div>
+     </header>

@@ -22,9 +22,22 @@
             <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
         </nav>
+        <div class="right-buttons">
         <div class="right">
             <a href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i>  Sign in</a>
         </div>
+        <button class="menu-button" onclick="toggleDropdownMenu()">
+        <i class="fa-solid fa-caret-down" style="color: #000000;"></i>
+        </button>
+        </div>
+        <div class="dropdown-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#recycling">Recycling</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </div>
     </header>
     <section class="home" id="home">
             <div class="welcome-home">
@@ -203,5 +216,6 @@
       <span>Terms and Conditions Apply</span>
     </div>
     </footer>
+    <script src="{{ asset('js/menu.js') }}"></script>
 </body>
 </html>

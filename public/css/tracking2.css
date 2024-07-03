@@ -1,0 +1,46 @@
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.tracking-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.truck-info {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 0.6rem;
+}
+
+.truck-info h2{
+    font-size: 1rem;
+}
+
+#map {
+    height: 500px;
+    width: 700px;
+}
+
+@media (max-width: 768px){
+    .map-container{
+        flex-direction: column;
+        gap: 30px;
+    }
+    #map{
+        width: 100%;
+    }
+    .tracking-info{
+        flex-direction: row;
+        gap: 20px;
+    }
+}

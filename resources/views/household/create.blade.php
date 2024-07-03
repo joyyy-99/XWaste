@@ -30,10 +30,6 @@
             <p>Choose the location on the map (Remember to choose within the bounds of Nairobi)</p>
             <div id="map"></div>
         </div>
-        <div>
-            <label for="subscription_status">Subscription Status:</label>
-            <input type="checkbox" id="subscription_status" name="subscription_status" value="1">
-        </div>
         <button type="submit">Register</button>
     </form>
     </div>
@@ -43,6 +39,7 @@
       <span>Terms and Conditions Apply</span>
     </div>
     </footer>
+    <script src="{{ asset('js/menu.js') }}"></script>
     <script>
         var map = L.map('map').setView([-1.2921, 36.8219], 12); // Nairobi coordinates and zoom level
 

@@ -12,11 +12,6 @@ class GarbageBinRequestController extends Controller
     public function index()
     {
         $garbageBinRequests = GarbageBinRequest::all();
-        return view('garbage_bin_requests.index', compact('garbageBinRequests'));
-    }
-    public function index1()
-    {
-        $garbageBinRequests = GarbageBinRequest::all();
         Log::info($garbageBinRequests);
         return view('garbage_bin_requests.admin.index1', compact ('garbageBinRequests')); 
     }

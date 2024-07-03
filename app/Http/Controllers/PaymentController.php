@@ -4,13 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Payment;
+use App\Models\User;
+use App\Models\Subscription;
 use Illuminate\Support\Facades\Log;
+use Stripe\Payout;
 
 class PaymentController extends Controller
 {
     public function create(Request $request)
     {
-        $plan = $request->input('plan');
+        // Assuming you have the user ID 
+        $userId = auth()->id(); // Example: Retrieve authenticated user ID
+
+        // Query subscriptions directly using Subscription model
+        $subscriptions = Subscription::where('user_id', $userId)->latest()->get();
+
+        foreach ($subscriptions as $subscription) {
+        $plan = $subscription->plan;
+        }
         $cost = $request->input('cost');
         return view('payment.create', compact('plan', 'cost'));
     }
@@ -21,11 +32,27 @@ class PaymentController extends Controller
             'paymentDate' => 'required|date',
             'method' => 'required|string',
         ]);
-        $payment = new Payment();
-        $payment->amount = $request->input('subscription');
-        $payment->paymentDate = $request->input('paymentDate');
-        $payment->method = $request->input('method');
-        $payment->save();
+
+    // Assuming you have the user ID 
+    $userId = auth()->id(); // Example: Retrieve authenticated user ID
+
+    // Query subscriptions directly using Subscription model
+    $subscriptions = Subscription::where('user_id', $userId)->latest()->get();
+
+    foreach ($subscriptions as $subscription) {
+        $plan = $subscription->plan;
+        $subscriptionId = $subscription->id;
+    }
+
+    // Create a new payment instance
+    Payment::create([  
+        'user_id' => $userId,
+        'subscription_id' => $subscriptionId,
+        'amount' => $request->input('subscription'),
+        'paymentDate' => $request->input('paymentDate'),
+        'method' => $request->input('method'),
+    ]);
+
 
         if ($request->method == 'card') {
             // Redirect to Stripe payment page with the cost parameter
@@ -33,8 +60,6 @@ class PaymentController extends Controller
         } else {
             return redirect()->back()->with('success', 'Payment processed successfully. Please pay the cash during pickup.');
         }
-
-        return redirect()->route('payment.confirmation');
     }
 
     public function confirmation()

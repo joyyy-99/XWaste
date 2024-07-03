@@ -6,7 +6,7 @@
 
         .sidebar {
             width: 250px;
-            height: 100vh;
+            height: 100%;
             background-color: #292929;
             color: white;
             position: fixed;
@@ -14,6 +14,14 @@
             left: 0;
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* or overflow-y: scroll; */
+            scrollbar-width: none; /* Firefox 64+ */
+            -ms-overflow-style: none; /* IE and Edge */
+            transition: all 0.3s;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
         }
 
         .sidebar h2 {
@@ -42,6 +50,70 @@
         .sidebar-menu a:hover {
             background-color: grey;
             color: black;
+        }
+
+        .sidebar-toggle {
+            display: none; /* Hide by default on larger screens */
+        }
+
+        .sidebar.collapsed {
+            display: block; 
+        }
+
+        
+        .sidebar .sidebar-close {
+            display: none; /* Hide close button by default */
+        }
+
+        .sidebar .sidebar-close i {
+            font-size: 1.5rem; /* Adjust icon size */
+            color: white; /* Adjust icon color */
+        }
+
+        .main-content{
+            margin-left: 150px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-250px); /* Move sidebar off-screen */
+            }
+        
+            .sidebar.collapsed {
+                transform: translateX(0);
+                z-index: 1000; /* Show sidebar */
+            }
+        
+            .sidebar-menu {
+                padding: 10px; /* Adjust padding */
+            }
+        
+            .sidebar-toggle {
+                display: block; /* Show toggle button/icon */
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                font-size: 1.5rem; /* Adjust font size of toggle icon */
+                cursor: pointer;
+                border: none;
+                background-color: #ffffff;
+            }
+
+            .main-content{
+                margin-left: 0;
+            }
+
+            .sidebar .sidebar-close {
+                display: block; /* Show close button in collapsed state */
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
         }
 
         .form-area {

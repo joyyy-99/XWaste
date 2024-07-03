@@ -12,6 +12,7 @@
     <table class="table mt-5">
         <thead>
             <tr>
+                <th scope="col">#</th>
                 <th scope="col">User ID</th>
                 <th scope="col">Delivery Address</th>
                 <th scope="col">Organic Waste</th>

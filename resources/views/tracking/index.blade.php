@@ -28,7 +28,7 @@
         <span>Terms and Conditions Apply</span>
         </div>
     </footer>
-
+    <script src="{{ asset('js/menu.js') }}"></script>
     <script>
         // Initialize the map and set its view to Nairobi
         var map = L.map('map').setView([-1.286389, 36.817223], 13);

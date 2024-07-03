@@ -38,7 +38,7 @@
             <span>Terms and Conditions Apply</span>
         </div>
     </footer>
-
+    <script src="{{ asset('js/menu.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.3/flatpickr.min.js"></script>
     <script>
         flatpickr('#pickup_date', {

@@ -39,5 +39,6 @@
       <span>Terms and Conditions Apply</span>
     </div>
     </footer>
+    <script src="{{ asset('js/menu.js') }}"></script>
 </body>
 </html>

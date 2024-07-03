@@ -8,5 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Subscription extends Model
 {
     use HasFactory;
-    protected $fillable = ['plan', 'start_date', 'end_date'];
+    protected $fillable = ['user_id', 'plan', 'start_date', 'end_date'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

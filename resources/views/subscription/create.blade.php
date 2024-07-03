@@ -52,6 +52,7 @@
       <span>Terms and Conditions Apply</span>
     </div>
     </footer>
+    <script src="{{ asset('js/menu.js') }}"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         const planSelect = document.getElementById('plan');
