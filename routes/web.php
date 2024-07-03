@@ -112,5 +112,5 @@ Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index
 Route::get('/household', [HouseholdController::class, 'index'])->name('household.index');
 
 //Admin garbage bin requests route
-Route::get('/garbage_bin_requests', [GarbageBinRequestController::class, 'index'])->name('garbage_bin_requests.index');
+Route::get('/garbage_bin_requests/admin', [GarbageBinRequestController::class, 'index1'])->name('garbage_bin_requests.admin.index1');
 

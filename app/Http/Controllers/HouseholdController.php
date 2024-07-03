@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Household;
-
+use Illuminate\Support\Facades\Log;
 class HouseholdController extends Controller
 {
+    public function index()
+    {
+        
+        $household = Household::all();
+        Log::info($household);
+        
+        return view('household.index', compact('household'));
+    }
     public function create()
     {
         return view('household.create');
