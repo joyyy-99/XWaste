@@ -1,42 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
-:root{
-    --border : #502419;
-}
-*::-webkit-scrollbar{
- height: 0.5rem;
- width: 1rem;
+:root {
+    --border: #502419;
 }
 
-*::-webkit-scrollbar-track{
+*::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-*::-webkit-scrollbar-thumb{
+*::-webkit-scrollbar-thumb {
     background-color: black;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-
-html{
+html {
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 6.5rem;
+    height: 100%; /* Ensure html takes full height */
 }
-a{
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full height */
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+a {
     text-decoration: none;
 }
-section{
+
+section {
     padding: 7rem 2rem;
 }
-button{
+
+button {
     background-color: black;
     color: white;
     padding: 7px;
@@ -44,10 +57,12 @@ button{
     border-style: hidden;
     width: 100%;
 }
-button:hover{
+
+button:hover {
     background-color: grey;
 }
-.header{
+
+.header {
     cursor: pointer;
     display: flex;
     padding: 2rem;
@@ -57,51 +72,50 @@ button:hover{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    top: 0;
+    left: 0;
 }
 
-.header .logo{
+.header .logo {
     margin-left: 2rem;
 }
-.header .logo a{
+
+.header .logo a {
     color: black;
     font-size: 2.5rem;
     font-weight: bold;
     text-decoration: none;
 }
 
-.header .nav a{
+.header .nav a {
     color: black;
     font-size: 1.7rem;
     margin: 0 1rem;
 }
 
-.header .nav a:hover{
+.header .nav a:hover {
     color: gray;
     text-decoration: none;
 }
 
-.header .right{
+.header .right {
     display: inline;
 }
-.header .right{
+
+.header .right {
     color: black;
     font-size: 1.5rem;
     padding-left: 0;
 }
 
-.header .right .logout-button{
+.header .right .logout-button {
     background-color: white;
     color: black;
     cursor: pointer;
 }
-.header .right .logout-button:hover{
-    color: gray;
-}
 
-body {
-    background-color: white; 
-    margin: 0;
-    padding: 0;
+.header .right .logout-button:hover {
+    color: gray;
 }
 
 h1 {
@@ -110,9 +124,11 @@ h1 {
     color: #333;
 }
 
-.payment-container{
+.payment-container {
     padding-top: 120px;
+    flex: 1; /* Ensures the container takes available space */
 }
+
 .payment-form {
     max-width: 600px;
     margin: 40px auto;
@@ -151,7 +167,6 @@ textarea {
     resize: vertical;
 }
 
-
 .success {
     max-width: 600px;
     margin: 20px auto 0;
@@ -161,13 +176,14 @@ textarea {
     border: 1px solid #c3e6cb;
     border-radius: 4px;
 }
+
+/* Footer must stay at the bottom of the page */
 footer {
     text-align: center;
     padding: 10px;
     background: white;
     border-top: 0.05rem solid black;
-    position: relative;
-    bottom: 0;
+    margin-top: auto; /* Push footer to the bottom */
     width: 100%;
     font-size: 1.5rem;
 }

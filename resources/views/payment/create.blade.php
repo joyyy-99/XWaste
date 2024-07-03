@@ -38,7 +38,7 @@
             <label for="monthly">100 per month</label><br>
             <input type="radio" id="yearly" name="subscription" value="1099" {{ $plan === 'yearly' ? 'checked' : '' }} readonly>
             <label for="yearly">1099 per year</label>
-            <input type="hidden" name="subscription" value="{{ $cost }}">
+            
         </div>
         <div>
             <label for="paymentDate">Payment Date:</label>
