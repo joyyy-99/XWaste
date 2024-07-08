@@ -34,6 +34,10 @@ class TruckController extends Controller
 
         $truck = $this->truck->create($request->all());
 
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'truck' => $truck]);
+        }
+
         return redirect()->route('trucks.index')->with('success', 'Truck created successfully.');
     }
 
@@ -64,5 +68,11 @@ class TruckController extends Controller
 
         return redirect()->route('trucks.index')->with('success', 'Truck deleted successfully.');
     }
+    public function tracking()
+{
+    $trucks = $this->truck->all();
+    return view('tracking.admin.index1', compact('trucks'));
+}
+
 }
 
