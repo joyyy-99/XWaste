@@ -12,6 +12,7 @@ class Household extends Model
     protected $fillable = [
         'user_id',
         'location',
+        'household_name',
     ];
 
     public function user()
