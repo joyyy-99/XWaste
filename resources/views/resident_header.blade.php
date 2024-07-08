@@ -1,6 +1,7 @@
 <header class="header">
         <div class="logo"><a href="{{ route('dashboard') }}">XWaste</a></div>
         <nav class="nav">
+            <a href="{{ route('dashboard') }}">Home</a>
             <a href="{{ route('schedule.create') }}">Scheduling</a>
             <a href="{{ route('subscription.create') }}">Subscribe</a>
             <a href="{{ route('payment.create') }}">Payment</a>
@@ -21,6 +22,7 @@
         </button>
         </div>
         <div class="dropdown-menu">
+        <a href="{{ route('dashboard') }}">Home</a>
         <a href="{{ route('schedule.create') }}">Scheduling</a>
         <a href="{{ route('subscription.create') }}">Subscribe</a>
         <a href="{{ route('payment.create') }}">Payment</a>
