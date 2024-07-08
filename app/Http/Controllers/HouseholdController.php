@@ -28,6 +28,7 @@ class HouseholdController extends Controller
 
         Household::create([
             'user_id' => auth()->id(), // Assuming user is logged in
+            'household_name' => $request->household_name,
             'location' => $request->location,
         ]);
 

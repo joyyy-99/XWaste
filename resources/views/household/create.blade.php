@@ -24,6 +24,10 @@
     @endif
     <form action="{{ route('household.store') }}" method="POST" class="household-form">
         @csrf
+        <div class="form-group">
+        <label for="household_name">Household Name:</label>
+        <input type="text" id="household_name" name="household_name" placeholder="e.g Kamau's household" required>
+        </div>
         <div>
             <label for="location">Location:</label>
             <input type="text" id="location" name="location" required>

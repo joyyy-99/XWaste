@@ -14,6 +14,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">User ID</th>
+                <th scope="col">Household Name</th>
                 <th scope="col">Location</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <tr>
                     <td scope="col">{{ $loop->iteration }}</td>
                     <td scope="col">{{ $item->user_id }}</td>
+                    <td scope="col">{{ $item->household_name }}</td>
                     <td scope="col">{{ $item->location }}</td>
                 </tr>
             @endforeach
