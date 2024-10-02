@@ -54,7 +54,7 @@
                 @endif
 
                 <button class="ms-4 button">
-                    {{ __('Sign in') }}
+                    {{ __('Login') }}
                 </button>
             </div>
             <div class="or-container">

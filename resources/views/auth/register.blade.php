@@ -71,7 +71,7 @@
                 </a>
 
                 <button class="ms-4 button">
-                    {{ __('Signup') }}
+                    {{ __('Register') }}
                 </button>
             </div>
         </form>
